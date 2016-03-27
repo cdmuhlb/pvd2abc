@@ -27,12 +27,12 @@ libraries, whose API documentation is often lacking.
 * ParaView's "Save Geometry" feature handles object visibility in a
 strange way.  Any object not visible at the start of the animation will
 be omitted from the export.  And objects that lose visibility will
-continue to reference the data from their last visible frame.  `pvd2vtk`
+continue to reference the data from their last visible frame.  `pvd2abc`
 therefore assumes that any object referencing the same data as in the
 previous frame should be marked as invisible.  The geometry for that
 frame is still saved, but will be constant throughout the period of
 invisibility (since ParaView doesn't export the actual data for those
-times).  `vtk2abc` also provides a mechanism to mark objects that should
+times).  `pvd2abc` also provides a mechanism to mark objects that should
 be invisible on the first frame (but it relies on the ParaView source
 ID, which changes with each export).
 * "vtkMultiBlockDataSet" (".vtm") files are assumed to contain a single
